@@ -7,7 +7,7 @@ import 'swiper/css/effect-coverflow';
 
 const screenshots = [
   {
-    url: "/screenshots/Screen1.png",
+    url: "/BoltWebsite/screenshots/Screen1.png",
     alt: "Description of screen 1"
   },
   {
