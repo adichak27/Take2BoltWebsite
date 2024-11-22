@@ -7,31 +7,31 @@ import 'swiper/css/effect-coverflow';
 
 const screenshots = [
   {
-    url: "/BoltWebsite/screenshots/Screen1.png",
+    url: "/Take2BoltWebsite/screenshots/Screen1.png",
     alt: "Description of screen 1"
   },
   {
-    url: "/screenshots/Screen2.png",
+    url: "/Take2BoltWebsite/screenshots/Screen2.png",
     alt: "Description of screen 2"
   },
   {
-    url: "/screenshots/Screen3.png",
+    url: "/Take2BoltWebsite/screenshots/Screen3.png",
     alt: "Description of screen 3"
   },
   {
-    url: "/screenshots/Screen4.png",
+    url: "/Take2BoltWebsite/screenshots/Screen4.png",
     alt: "Description of screen 4"
   },
   {
-    url: "/screenshots/Screen5.png",
+    url: "/Take2BoltWebsite/screenshots/Screen5.png",
     alt: "Description of screen 5"
   },
   {
-    url: "/screenshots/Screen6.png",
+    url: "/Take2BoltWebsite/screenshots/Screen6.png",
     alt: "Description of screen 6"
   },
   {
-    url: "/screenshots/Screen7.png",
+    url: "/Take2BoltWebsite/screenshots/Screen7.png",
     alt: "Description of screen 7"
   }
 ];
