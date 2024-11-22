@@ -13,7 +13,10 @@ export default function Footer() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full border border-red-900/20 bg-gradient-to-br from-[#420005] to-[#2a0002] hover:shadow-[0_0_15px_rgba(220,38,38,0.3)]"
+              className="p-2 rounded-full border-2 border-transparent hover:border-red-500 
+                         bg-gradient-to-br from-[#420005] to-[#2a0002] 
+                         hover:shadow-[0_0_15px_rgba(220,38,38,0.5)]
+                         transition-all"
             >
               <Instagram className="w-5 h-5 text-gray-200" />
             </motion.a>
@@ -24,7 +27,10 @@ export default function Footer() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full border border-red-900/20 bg-gradient-to-br from-[#420005] to-[#2a0002] hover:shadow-[0_0_15px_rgba(220,38,38,0.3)]"
+              className="p-2 rounded-full border-2 border-transparent hover:border-red-500 
+                         bg-gradient-to-br from-[#420005] to-[#2a0002] 
+                         hover:shadow-[0_0_15px_rgba(220,38,38,0.5)]
+                         transition-all"
             >
               <Linkedin className="w-5 h-5 text-gray-200" />
             </motion.a>

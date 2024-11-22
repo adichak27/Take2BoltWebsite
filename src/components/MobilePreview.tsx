@@ -38,26 +38,70 @@ const screenshots = [
 
 export default function MobilePreview() {
   return (
-    <div className="py-24 bg-gradient-to-b from-black to-[#1a0001]">
+    <div id="preview" className="py-24 bg-gradient-to-b from-black to-[#1a0001]">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ 
+            opacity: 1, 
+            y: 0,
+            transition: {
+              duration: 0.8,
+              ease: [0.25, 0.4, 0.25, 1] // Custom easing curve
+            }
+          }}
+          viewport={{ once: false }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">A Sneak Peek at Our Mobile App</h2>
-          <p className="text-xl text-red-200 max-w-2xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: {
+                duration: 0.6,
+                delay: 0.2
+              }
+            }}
+            viewport={{ once: false }}
+            className="text-4xl font-bold text-white mb-4"
+          >
+            A Sneak Peek at Our Mobile App
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              transition: {
+                duration: 0.6,
+                delay: 0.4
+              }
+            }}
+            viewport={{ once: false }}
+            className="text-xl text-red-200 max-w-2xl mx-auto"
+          >
             Discover what your friends are watching and explore their latest reviews and recommendations. Stay connected through shared favorites, recent finds, and honest ratings. Take2 makes it easy to find inspiration from the people who know your taste best!
-          </p>
+          </motion.p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ 
+            opacity: 0, 
+            scale: 0.9,
+            y: 60
+          }}
+          whileInView={{ 
+            opacity: 1, 
+            scale: 1,
+            y: 0,
+            transition: {
+              duration: 1.2,
+              delay: 0.3,
+              ease: [0.25, 0.4, 0.25, 1]
+            }
+          }}
+          viewport={{ once: false }}
           className="relative"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
@@ -66,14 +110,15 @@ export default function MobilePreview() {
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={3}
-            spaceBetween={30}
+            slidesPerView={'auto'}
+            initialSlide={1}
+            spaceBetween={50}
             loop={true}
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
-              depth: 100,
-              modifier: 1,
+              depth: 200,
+              modifier: 1.5,
               slideShadows: true,
             }}
             autoplay={{
@@ -83,30 +128,44 @@ export default function MobilePreview() {
             }}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
-            className="w-full py-12"
+            className="w-full max-w-[1400px] mx-auto py-16"
           >
             {screenshots.map((screenshot, index) => (
               <SwiperSlide
                 key={index}
-                className="w-[300px] bg-transparent"
+                className="w-[350px] bg-transparent"
               >
-                <div className="relative w-[300px] h-[600px] rounded-[3rem] overflow-hidden bg-black border-8 border-gray-800 shadow-xl shadow-red-900/20">
-                  {/* iPhone Notch - slightly taller and repositioned */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40, rotateY: -20 }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0,
+                    rotateY: 0,
+                    transition: {
+                      duration: 0.8,
+                      delay: 0.1 * index,
+                      ease: [0.25, 0.4, 0.25, 1]
+                    }
+                  }}
+                  viewport={{ once: false }}
+                  className="relative w-[350px] h-[700px] rounded-[3rem] overflow-hidden bg-black border-8 border-gray-800 shadow-xl shadow-red-900/20"
+                >
+                  {/* iPhone Notch */}
                   <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 h-7 w-36 bg-black rounded-b-2xl z-20" />
                   
-                  {/* Screen Content - removed padding */}
+                  {/* Screen Content */}
                   <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent z-10" />
                     <img
                       src={screenshot.url}
                       alt={screenshot.alt}
-                      className="w-full h-[103%] object-cover object-top -mt-3"
+                      className="w-full h-[103%] object-cover object-top -mt-2"
                     />
                   </div>
 
                   {/* Home Indicator */}
                   <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full z-20" />
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -114,19 +173,31 @@ export default function MobilePreview() {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          whileInView={{ 
+            opacity: 1, 
+            y: 0,
+            transition: {
+              duration: 0.6,
+              delay: 0.6,
+              ease: [0.25, 0.4, 0.25, 1]
+            }
+          }}
+          viewport={{ once: false }}
           className="text-center mt-16"
         >
-          <a 
+          <motion.a 
             href="https://forms.gle/dkCDNnrxQ7eyHdyr9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent"
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all transform hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent"
           >
             Join the Beta Today!
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </div>

@@ -10,7 +10,8 @@ export default function Hero() {
         <div className="flex flex-col items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl text-center"
           >
@@ -41,6 +42,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
           transition={{ delay: 0.8 }}
           className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
@@ -53,6 +55,7 @@ export default function Hero() {
               key={title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
               transition={{ delay: 0.8 + index * 0.2 }}
               className="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-red-500/20 hover:bg-white/10 transition-all duration-300 shadow-lg shadow-red-900/20"
             >

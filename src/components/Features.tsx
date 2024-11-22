@@ -41,44 +41,46 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="bg-gradient-to-b from-[#1a0001] to-black">
+    <div id="features" className="bg-gradient-to-b from-[#1a0001] to-black">
       {features.map((feature, index) => (
         <motion.section
           key={feature.title}
           className={`py-24 ${index % 2 === 0 ? 'bg-black/30' : ''}`}
         >
           <div className="container mx-auto px-6">
-            <div className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+            <div className={`flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto gap-4 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
               <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.8 }}
                 className="flex-1 text-center lg:text-left"
               >
-                <div className="flex items-center gap-4 mb-6 justify-center lg:justify-start">
-                  <div className="bg-gradient-to-br from-[#420005] to-[#2a0002] p-4 rounded-xl shadow-lg shadow-red-900/20">
-                    <feature.icon className="w-8 h-8 text-white" />
+                <div className={`max-w-lg ${index % 2 === 0 ? 'lg:ml-auto lg:mr-0' : 'lg:mr-auto lg:ml-0'}`}>
+                  <div className="flex items-center gap-5 mb-7 justify-center lg:justify-start">
+                    <div className="bg-gradient-to-br from-[#420005] to-[#2a0002] p-4 rounded-xl shadow-lg shadow-red-900/20">
+                      <feature.icon className="w-9 h-9 text-white" />
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-white">
+                      {feature.title}
+                    </h2>
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white">
-                    {feature.title}
-                  </h2>
+                  <p className="text-lg lg:text-xl text-red-200 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <p className="text-lg text-red-200 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  {feature.description}
-                </p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.8 }}
-                className="flex-1"
+                className="flex-1 flex justify-center"
               >
-                <div className="relative w-[300px] h-[600px] mx-auto rounded-[3rem] overflow-hidden bg-black border-8 border-gray-800 shadow-xl shadow-red-900/20">
+                <div className="relative w-[350px] h-[700px] mx-auto rounded-[3rem] overflow-hidden bg-black border-8 border-gray-800 shadow-xl shadow-red-900/20">
                   {/* iPhone Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-40 bg-black rounded-b-2xl z-20" />
+                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 h-7 w-36 bg-black rounded-b-2xl z-20" />
                   
                   {/* Screen Content */}
                   <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
@@ -86,7 +88,7 @@ export default function Features() {
                     <img
                       src={feature.image}
                       alt={feature.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-[103%] object-cover object-top -mt-2"
                     />
                   </div>
 

@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import MobilePreview from './components/MobilePreview';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +50,7 @@ export default function App() {
           <Footer />
         </div>
       )}
+      <ScrollToTopButton />
     </>
   );
 }

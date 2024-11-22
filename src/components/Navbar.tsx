@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { Film } from 'lucide-react';
 
 export default function Navbar() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="fixed w-full z-50 px-4 pt-4">
       <motion.nav 
@@ -16,6 +23,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-2 cursor-pointer"
+              onClick={scrollToTop}
             >
               <motion.div 
                 whileHover={{ rotate: 360 }}
@@ -28,10 +36,20 @@ export default function Navbar() {
             </motion.div>
             
             <div className="hidden md:flex items-center space-x-8">
-              {['Features', 'About', 'Contact'].map((item) => (
+              {['Home', 'Features', 'Preview'].map((item) => (
                 <motion.a 
                   key={item}
-                  href={`#${item.toLowerCase()}`} 
+                  href={item === 'Home' ? '#' : `#${item.toLowerCase()}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (item === 'Home') {
+                      scrollToTop();
+                    } else if (item === 'Preview') {
+                      document.getElementById('preview')?.scrollIntoView({ behavior: 'smooth' });
+                    } else if (item === 'Features') {
+                      document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="relative px-4 py-2 text-gray-200 hover:text-[#ff1a1a] transition-all duration-300
                            border border-transparent hover:border-red-500/50
                            rounded-lg
