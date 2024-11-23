@@ -43,14 +43,14 @@ const charVariants = {
   },
 };
 
-// New variants for the subtext
+// New variants for the subtext with slower timing
 const subtextContainerVariants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.8, // Delay after main title
-      staggerChildren: 0.02, // Faster than title for readability
+      delayChildren: 1.2, // Increased delay before starting
+      staggerChildren: 0.08, // Increased delay between words
     },
   },
 };
@@ -66,7 +66,8 @@ const subtextCharVariants = {
     transition: {
       type: "spring",
       damping: 12,
-      stiffness: 100,
+      stiffness: 80, // Reduced stiffness for slower movement
+      duration: 0.5, // Added duration for slower animation
     }
   },
 };
@@ -80,6 +81,9 @@ export default function Hero() {
   ];
 
   const subtextContent = "Discover, rank, and keep a record of all your favorite movies and TV shows with Take2, the ultimate tracker app.";
+
+  // Split text into words instead of characters
+  const subtextWords = subtextContent.split(" ");
 
   return (
     <div className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#3D0C0C] via-[#2A0808] to-[#1A0505]">
@@ -144,13 +148,14 @@ export default function Hero() {
               className="text-xl text-red-200 mb-8 leading-relaxed overflow-hidden"
             >
               <div className="flex flex-wrap justify-center lg:justify-start">
-                {subtextContent.split("").map((char, index) => (
+                {subtextWords.map((word, index) => (
                   <motion.span
                     key={index}
                     variants={subtextCharVariants}
                     className="inline-block"
                   >
-                    {char === " " ? "\u00A0" : char}
+                    {word}
+                    {index !== subtextWords.length - 1 && "\u00A0"} {/* Add space between words */}
                   </motion.span>
                 ))}
               </div>
@@ -159,14 +164,17 @@ export default function Hero() {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ 
+                delay: 2.5,
+                duration: 0.8
+              }}
               className="flex justify-center lg:justify-start w-full"
             >
               <a 
                 href="https://forms.gle/dkCDNnrxQ7eyHdyr9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full text-lg font-bold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent shadow-lg shadow-red-900/30"
+                className="inline-flex px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full text-lg font-bold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent shadow-lg shadow-red-900/30"
               >
                 Download Beta!
               </a>
@@ -182,8 +190,12 @@ export default function Hero() {
           >
             {/* Subtle, faint glow layers */}
             <div className="absolute -inset-10">
+              {/* Primary red glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-red-500/10 rounded-full blur-[80px]" />
+              {/* Secondary lighter glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] bg-white/5 rounded-full blur-[50px] mix-blend-overlay" />
+              {/* Additional soft red glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[98%] h-[98%] bg-red-400/5 rounded-full blur-[60px]" />
             </div>
             
             {/* Image container */}

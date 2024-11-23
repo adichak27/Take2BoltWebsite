@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
@@ -102,10 +103,8 @@ export default function MobilePreview() {
             }
           }}
           viewport={{ once: false }}
-          className="relative"
+          className="relative swiper-container"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
-          
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -114,6 +113,7 @@ export default function MobilePreview() {
             initialSlide={1}
             spaceBetween={50}
             loop={true}
+            navigation={true}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -127,7 +127,7 @@ export default function MobilePreview() {
               pauseOnMouseEnter: true,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination, Autoplay]}
+            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
             className="w-full max-w-[1400px] mx-auto py-16"
           >
             {screenshots.map((screenshot, index) => (
@@ -159,7 +159,11 @@ export default function MobilePreview() {
                     <img
                       src={screenshot.url}
                       alt={screenshot.alt}
-                      className="w-full h-[103%] object-cover object-top -mt-4"
+                      className={`w-full h-[103%] object-cover ${
+                        screenshot.url.includes('Screen4') 
+                          ? 'object-center -mt-5'
+                          : 'object-top -mt-4'
+                      }`}
                     />
                   </div>
 

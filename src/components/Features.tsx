@@ -88,7 +88,11 @@ export default function Features() {
                     <img
                       src={feature.image}
                       alt={feature.alt}
-                      className="w-full h-[103%] object-cover object-top -mt-4"
+                      className={`w-full h-[103%] object-cover ${
+                        feature.image.includes('Screen4') 
+                          ? 'object-center -mt-5'
+                          : 'object-top -mt-4'
+                      }`}
                     />
                   </div>
 
