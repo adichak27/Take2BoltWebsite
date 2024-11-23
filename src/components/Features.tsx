@@ -13,28 +13,28 @@ const features = [
     icon: Star,
     title: "All the Details in One Place",
     description: "Get a complete view of any movie and show—all in one place. See cast details, streaming availability, a quick synopsis, and even which friends have watched and rated it. Make decisions faster with everything you need at a glance.",
-    image: "/Take2BoltWebsite/screenshots/Screen3.png",
+    image: "/screenshots/Screen3.png",
     alt: "Movie details screen"
   },
   {
     icon: ListChecks,
     title: "Organize Your Watchlists",
     description: "Effortlessly organize everything you've watched and plan to watch. Create separate lists for completed shows and upcoming titles, so you'll never forget what's next. Keep your watchlist neatly sorted and easily accessible, all in one app.",
-    image: "/Take2BoltWebsite/screenshots/Screen5.png",
+    image: "/screenshots/Screen5.png",
     alt: "Watchlist organization"
   },
   {
     icon: Users,
     title: "See What Friends Are Watching",
     description: "Discover what your friends are watching and explore their latest reviews and recommendations. Stay connected through shared favorites, recent finds, and honest ratings. Take2 makes it easy to find inspiration from the people who know your taste best!",
-    image: "/Take2BoltWebsite/screenshots/Screen2.png",
+    image: "/screenshots/Screen2.png",
     alt: "Social features interface"
   },
   {
     icon: TrendingUp,
     title: "Discover What's Trending Now",
     description: "Stay up-to-date with the latest trending movies and shows, all in one place. Discover what everyone's talking about and find your next favorite binge-worthy title. Dive into the hottest picks and never miss a moment of what's new and popular!",
-    image: "/Take2BoltWebsite/screenshots/Screen1.png",
+    image: "/screenshots/Screen1.png",
     alt: "Trending content screen"
   }
 ];
