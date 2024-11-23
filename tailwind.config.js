@@ -5,6 +5,9 @@ export default {
     extend: {
       animation: {
         blob: "blob 7s infinite",
+        'slow-drift': 'drift 15s infinite alternate',
+        'slow-drift-reverse': 'drift 20s infinite alternate-reverse',
+        'pulse-slow': 'pulse 8s infinite',
       },
       keyframes: {
         blob: {
@@ -20,6 +23,10 @@ export default {
           "100%": {
             transform: "translate(0px, 0px) scale(1)",
           },
+        },
+        drift: {
+          '0%': { transform: 'translate(0px, 0px)' },
+          '100%': { transform: 'translate(50px, 30px)' },
         },
       },
     },

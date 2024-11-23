@@ -82,15 +82,21 @@ export default function Hero() {
   const subtextContent = "Discover, rank, and keep a record of all your favorite movies and TV shows with Take2, the ultimate tracker app.";
 
   return (
-    <div className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2a0002] via-[#420005] to-[#1a0001]">
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-[#3a0003] opacity-60" />
+    <div className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#3D0C0C] via-[#2A0808] to-[#1A0505]">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
       
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-[10px] opacity-50">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#ff1a1a] mix-blend-multiply filter blur-[128px] animate-blob" />
-          <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#420005] mix-blend-multiply filter blur-[128px] animate-blob animation-delay-2000" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-[#2a0002] mix-blend-multiply filter blur-[128px] animate-blob animation-delay-4000" />
+        <div className="absolute w-full h-full">
+          <div className="absolute top-0 -left-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#4A0F0F]/40 to-transparent blur-[80px] animate-slow-drift" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-[#2A0808]/30 to-transparent blur-[60px] animate-slow-drift-reverse" />
         </div>
+        
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#FF2E2E]/5 to-transparent blur-[40px] mix-blend-overlay animate-pulse-slow" />
+          <div className="absolute bottom-1/3 right-1/4 w-[250px] h-[250px] rounded-full bg-gradient-to-l from-[#FF2E2E]/5 to-transparent blur-[40px] mix-blend-overlay animate-pulse-slow delay-1000" />
+        </div>
+        
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -98,7 +104,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl text-center lg:text-left"
           >
@@ -106,7 +112,7 @@ export default function Hero() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight uppercase tracking-wide"
             >
               {titleLines.map((line, lineIndex) => (
@@ -134,7 +140,7 @@ export default function Hero() {
               variants={subtextContainerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className="text-xl text-red-200 mb-8 leading-relaxed overflow-hidden"
             >
               <div className="flex flex-wrap justify-center lg:justify-start">
@@ -170,22 +176,31 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative max-w-[600px] w-full"
           >
-            <img
-              src="/Take2BoltWebsite/screenshots/hero.png"
-              alt="Take2 App Hero"
-              className="w-full h-auto"
-            />
+            {/* Subtle, faint glow layers */}
+            <div className="absolute -inset-10">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-red-500/10 rounded-full blur-[80px]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] bg-white/5 rounded-full blur-[50px] mix-blend-overlay" />
+            </div>
+            
+            {/* Image container */}
+            <div className="relative">
+              <img
+                src="/Take2BoltWebsite/screenshots/hero.png"
+                alt="Take2 App Hero"
+                className="w-full h-auto relative z-10"
+              />
+            </div>
           </motion.div>
         </div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ delay: 0.8 }}
           className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
@@ -198,7 +213,7 @@ export default function Hero() {
               key={title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ delay: 0.8 + index * 0.2 }}
               className="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-red-500/20 hover:bg-white/10 transition-all duration-300 shadow-lg shadow-red-900/20"
             >
