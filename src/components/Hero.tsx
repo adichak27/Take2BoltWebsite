@@ -201,7 +201,7 @@ export default function Hero() {
             {/* Image container */}
             <div className="relative">
               <img
-                src="/Take2BoltWebsite/screenshots/hero.png"
+                src="/screenshots/hero.png"
                 alt="Take2 App Hero"
                 className="w-full h-auto relative z-10"
               />

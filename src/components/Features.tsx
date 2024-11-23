@@ -6,7 +6,7 @@ const features = [
     icon: ThumbsUp,
     title: "Compare and Rank Your Favorites",
     description: "Easily build your ultimate movie list by choosing between two favorites at a time. Swipe right for better, and left for worse. Over time, watch your personalized ranking grow with every choice you make!",
-    image: "/Take2BoltWebsite/screenshots/Screen4.png",
+    image: "/screenshots/Screen4.png",
     alt: "Movie comparison interface"
   },
   {
