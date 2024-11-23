@@ -115,11 +115,11 @@ export default function MobilePreview() {
             spaceBetween={50}
             loop={true}
             coverflowEffect={{
-              rotate: 50,
+              rotate: 0,
               stretch: 0,
               depth: 200,
-              modifier: 1.5,
-              slideShadows: true,
+              modifier: 2,
+              slideShadows: false,
             }}
             autoplay={{
               delay: 3000,
@@ -159,7 +159,7 @@ export default function MobilePreview() {
                     <img
                       src={screenshot.url}
                       alt={screenshot.alt}
-                      className="w-full h-[103%] object-cover object-top -mt-2"
+                      className="w-full h-[103%] object-cover object-top -mt-4"
                     />
                   </div>
 
@@ -196,7 +196,7 @@ export default function MobilePreview() {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all transform hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent"
           >
-            Join the Beta Today!
+             Download Beta!
           </motion.a>
         </motion.div>
       </div>

@@ -88,7 +88,7 @@ export default function Features() {
                     <img
                       src={feature.image}
                       alt={feature.alt}
-                      className="w-full h-[103%] object-cover object-top -mt-2"
+                      className="w-full h-[103%] object-cover object-top -mt-4"
                     />
                   </div>
 

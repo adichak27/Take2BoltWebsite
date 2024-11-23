@@ -70,7 +70,7 @@ export default function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                Join Beta
+                Download Beta
               </motion.a>
             </div>
           </div>

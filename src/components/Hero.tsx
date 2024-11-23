@@ -4,38 +4,60 @@ import { Smartphone, Tv, Film } from 'lucide-react';
 export default function Hero() {
   return (
     <div className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2a0002] via-[#420005] to-[#1a0001]">
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent to-[#3a0003] opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-[#3a0003] opacity-60" />
       
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -inset-[10px] opacity-50">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#ff1a1a] mix-blend-multiply filter blur-[128px] animate-blob" />
+          <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#420005] mix-blend-multiply filter blur-[128px] animate-blob animation-delay-2000" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-[#2a0002] mix-blend-multiply filter blur-[128px] animate-blob animation-delay-4000" />
+        </div>
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl text-center"
+            className="max-w-2xl text-center lg:text-left"
           >
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight uppercase tracking-wide">
               Track and Rank Your Favorites with Take2
             </h1>
-            <p className="text-xl text-red-200 mb-8">
+            <p className="text-xl text-red-200 mb-8 leading-relaxed">
               Discover, rank, and keep a record of all your favorite movies and TV shows with Take2, the ultimate tracker app.
             </p>
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex justify-center"
+              className="flex justify-center lg:justify-start w-full"
             >
               <a 
                 href="https://forms.gle/dkCDNnrxQ7eyHdyr9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent shadow-lg shadow-red-900/30"
+                className="w-full text-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full text-lg font-bold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent shadow-lg shadow-red-900/30"
               >
-                Sign up for our beta release!
+                Download Beta!
               </a>
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative max-w-[600px] w-full"
+          >
+            <img
+              src="/Take2BoltWebsite/screenshots/hero.png"
+              alt="Take2 App Hero"
+              className="w-full h-auto"
+            />
           </motion.div>
         </div>
 
