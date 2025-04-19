@@ -171,12 +171,12 @@ export default function Hero() {
               className="flex justify-center lg:justify-start w-full"
             >
               <a 
-                href="https://forms.gle/dkCDNnrxQ7eyHdyr9"
+                href="https://apps.apple.com/us/app/take2-movies-shows/id6737178731"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full text-lg font-bold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent shadow-lg shadow-red-900/30"
               >
-                Download Beta!
+                Download on App Store
               </a>
             </motion.div>
           </motion.div>

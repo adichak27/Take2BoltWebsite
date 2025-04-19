@@ -190,7 +190,7 @@ export default function MobilePreview() {
           className="text-center mt-16"
         >
           <motion.a 
-            href="https://forms.gle/dkCDNnrxQ7eyHdyr9"
+            href="https://apps.apple.com/us/app/take2-movies-shows/id6737178731"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ 
@@ -198,9 +198,13 @@ export default function MobilePreview() {
               transition: { duration: 0.2 }
             }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all transform hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent"
+            className="inline-block"
           >
-             Download Beta!
+            <img 
+              src="/screenshots/download_on_app_store_w.svg" 
+              alt="Download on the App Store" 
+              className="h-[60px] w-auto"
+            />
           </motion.a>
         </motion.div>
       </div>

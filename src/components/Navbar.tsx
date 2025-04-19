@@ -54,7 +54,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <motion.a 
-                href="https://forms.gle/dkCDNnrxQ7eyHdyr9" 
+                href="https://apps.apple.com/us/app/take2-movies-shows/id6737178731" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="px-4 py-2 bg-[#c10010] hover:bg-[#a1000d] text-white rounded-full font-semibold transition-all hover:shadow-[0_0_15px_rgba(220,38,38,0.5)] hover:border-red-500 border-2 border-transparent"
@@ -62,7 +62,7 @@ export default function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                Download Beta
+                Download on App Store
               </motion.a>
             </div>
           </div>
